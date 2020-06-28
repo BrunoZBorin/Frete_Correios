@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
             $table->integer('product_id')->unsigned();
             $table->foreign('product_id')
             ->references('id')
+            ->onDelete('cascade')
             ->on('products');
         });
     }

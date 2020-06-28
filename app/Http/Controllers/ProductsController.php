@@ -28,7 +28,7 @@ class ProductsController extends Controller
         $request->session()
             ->flash(
                 'message',
-                "Produto {$product->code} cadastrado com sucesso"
+                "Produto {$product->id} cadastrado com sucesso"
             );
        
         return redirect ('/products');
