@@ -13,3 +13,4 @@ Route::post('/orders/{productId}/add', 'OrdersController@store');
 Route::post('/orders/remove/{id}', 'OrdersController@destroy');
 Route::get('/quotations/{orderId}/add', 'QuotationsController@create');
 Route::post('/quotations/{productId}/add', 'QuotationsController@store');
+Route::post('/quotations/{productId}/calculate', 'QuotationsController@calculate');
