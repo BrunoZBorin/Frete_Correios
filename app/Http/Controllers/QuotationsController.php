@@ -24,7 +24,9 @@ class QuotationsController extends Controller
         
         $quotation = Quotation::create([
             'code' => $request->code,
-            'order_id' => $request->order_id
+            'order_id' => $request->order_id,
+            'freight' =>'',
+            'deadline'=>''
         ]);
         
         $order = Order::find($request->order_id);
@@ -38,5 +40,12 @@ class QuotationsController extends Controller
             );
        
         return view('quotations.index', compact('order','quotation','product'));
+    }
+    function update(Request $request)
+    {
+        $quotation = Quotation::find($request->id);
+        $quotation->freight = $request->freight;
+        $quotation->deadline = $request->deadline;
+        $quotation->save();
     }
 }

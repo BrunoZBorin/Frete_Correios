@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Quotation extends Model
 {
     protected $table = 'quotations';
-    protected $fillable = ['code','order_id'];
+    protected $fillable = ['code','order_id','freight','deadline'];
     public $timestamps = false;
     public function order()
     {

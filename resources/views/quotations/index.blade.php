@@ -55,3 +55,14 @@ $cep_origem=$order->CEP_Origem;
  echo "<h1>Valor: R$ ".$freight."<br />Prazo: ".$deadline." dias</h1>";
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="hidden" id="product_id" name="product_id" value={{$product->id}}>
+</body>
+</html>
