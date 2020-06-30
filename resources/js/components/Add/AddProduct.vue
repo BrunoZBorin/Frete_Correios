@@ -1,19 +1,7 @@
-@extends('layouts.layout_app')
-@section('content')
-<jumbo titulo="Adicionar Produto"></jumbo>
-@if($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
-<addproduct></addproduct>
-   <!-- <form method="post">
-        @csrf
+<template>
+  
+    <form method="post">
+        <input type="hidden" name="_token" v-bind:value="csrf">
         <div class="form-group">
             <label for="name">Nome do produto</label>
             <input type="text" class="form-control" name="name">
@@ -27,5 +15,20 @@
             <input type="number" step="0.01" class="form-control" name="length">
         </div>
         <button class="btn btn-primary">Adicionar</button>
-    </form>-->
-@endsection
+    </form>
+
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        }
+    }
+}
+</script>
+
+<style>
+
+</style>
