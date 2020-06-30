@@ -38046,7 +38046,8 @@ var render = function() {
         "list-group-item d-flex justify-content-between align-items-center"
     },
     [
-      _vm._v("\n    " + _vm._s(_vm.product) + "\n    "),
+      _c("a", { attrs: { href: "#" } }, [_vm._v(_vm._s(_vm.product.name))]),
+      _vm._v(" "),
       _c("span", { staticClass: "d-flex" }, [_vm._t("default")], 2)
     ]
   )

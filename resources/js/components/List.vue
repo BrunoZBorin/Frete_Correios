@@ -1,6 +1,6 @@
 <template>
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        {{product}}
+        <a href="#">{{product.name}}</a>
         <span class="d-flex">
             <slot></slot>
         </span>

@@ -9,7 +9,7 @@
   <a href="/products/add" class="btn btn-primary mb-2">Adicionar</a>
     <ul class="list-group">
     @foreach($products as $product)
-        <list product="{{$product->name}}">
+        <list :product='{{ json_encode($product) }}'>
             <a href="/orders/{{$product->id}}/add" class="btn btn-info btn-sm mr-2">Pedido</a>
             <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal"><i class="far fa-edit"></i></button>
             <form method="post" action="/products/remove/{{$product->id}}"
