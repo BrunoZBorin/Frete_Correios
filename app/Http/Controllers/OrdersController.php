@@ -44,9 +44,21 @@ class OrdersController extends Controller
         return redirect ('/orders');
     }
 
-    function destroy(Request $request)
+    function edit(int $id)
     {
-        Product::destroy($request->id);
+        $order = Order::find($id);
+        $product = Product::find($order->product_id);
+        return view('orders.update', compact('product','order'));
+    }
+    function update(OrdersFormRequest $request)
+    { 
+        $order = Order::find($request->id);
+        $newOrigem = $request->CEP_Origem;
+        $order->CEP_Origem = $newOrigem;
+        $newDestino = $request->CEP_Destino;
+        $order->CEP_Destino = $newDestino;
+
+        $order->save();
         return redirect ()->route('list_orders');
     }
 }

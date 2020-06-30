@@ -12,6 +12,15 @@ use Illuminate\Http\Request;
 
 class QuotationsController extends Controller
 {
+    function index(Request $request) 
+    {
+        $quotations = Quotation::query()
+        ->orderBy('id')
+        ->get();
+        $message = $request->session()->get('message');
+        return view('quotations.index', compact('quotations','message'));
+    }
+    
     function create(int $orderId)
     {   
         $order = Order::find($orderId);
