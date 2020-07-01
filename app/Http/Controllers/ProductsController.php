@@ -18,12 +18,24 @@ class ProductsController extends Controller
         $message = $request->session()->get('message');
         return view('products.index', compact('products','message'));
     }
-    function create()
-    {
-        return view('products.create');
+    function create(Request $request)
+    {   
+        $message = $request->session()->get('message');
+        return view('products.create', compact('message'));
     }
     function store(ProductsFormRequest $request)
     {
+        $max_size = collect([$request->width,$request->length,$request->height])->sum();
+        $request->max_size = $max_size;
+        if($request->max_size>200){
+            $request->session()
+              ->flash(
+                'message',
+                    'Soma de altura, largura e comprimento não pode ser maior que 200 cm'
+              ); 
+              
+              return redirect ('/products/add');
+        }
         $product = Product::create($request->all());
         $request->session()
             ->flash(

@@ -18,6 +18,7 @@ class QuotationsController extends Controller
         ->orderBy('id')
         ->get();
         $message = $request->session()->get('message');
+        
         return view('quotations.index', compact('quotations','message'));
     }
     
@@ -34,27 +35,33 @@ class QuotationsController extends Controller
         $quotation = Quotation::create([
             'code' => $request->code,
             'order_id' => $request->order_id,
-            'freight' =>'',
-            'deadline'=>''
+            'freight' => $request->freight,
+            'deadline'=> $request->deadline
         ]);
         
-        $order = Order::find($request->order_id);
-        
-        $product = Product::find($order->product_id);
-
         $request->session()
             ->flash(
                 'message',
                 "Pedido {$quotation->id} cadastrado com sucesso"
             );
        
-        return view('quotations.index', compact('order','quotation','product'));
+            return redirect ('/quotations');
     }
-    function update(Request $request)
+    function calculate(Request $request)
     {
-        $quotation = Quotation::find($request->id);
-        $quotation->freight = $request->freight;
-        $quotation->deadline = $request->deadline;
-        $quotation->save();
+        $code = $request->code;
+                
+        $order = Order::find($request->order_id);
+        
+        $product = Product::find($order->product_id);
+
+        return view('quotations.calculate', compact('order','code','product'));
+    }
+    function show(int $id)
+    {
+        $quotation = Quotation::find($id);
+        $order = Order::find($quotation->order_id);
+        $product = Product::find($order->product_id);
+        return view('quotations.update', compact('product','order','quotation'));
     }
 }

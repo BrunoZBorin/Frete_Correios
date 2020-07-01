@@ -1,5 +1,5 @@
 <template>
-  <form method="post">
+  <form method="post" action='/quotations/calculate'>
       <input type="hidden" name="_token" v-bind:value="csrf">
         <div class="form-group">
             <label for="name">Numero do pedido</label>
@@ -11,7 +11,7 @@
                 <option value="04510">PAC à vista</option>
             </select>
         </div>
-        <button class="btn btn-primary">Adicionar</button>
+        <button href='/quotations/calculate' class="btn btn-primary">Adicionar</button>
     </form>
 </template>
 
@@ -29,4 +29,4 @@ export default {
 
 <style>
 
-</style>-->
+</style>
