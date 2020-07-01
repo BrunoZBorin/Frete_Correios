@@ -2,7 +2,6 @@
 <div>
     <jumbo titulo="Pedidos"></jumbo>
     <slot></slot>
-    <a href="/orders/add" class="btn btn-primary mb-2">Adicionar</a>  
     <ul class="list-group">
         <li v-for="order in orders" :key="order.index" class="list-group-item d-flex justify-content-between align-items-center">
             <a :href="'/orders/'+order.id+'/edit'">Pedido nº{{order.id}}</a>
@@ -18,10 +17,10 @@
 <script>
 export default {
     props:["orders"],
-    data() {
-        return {
-            csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        }
+    data:function(){
+            return{
+                csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            }    
     }
 }
 </script>

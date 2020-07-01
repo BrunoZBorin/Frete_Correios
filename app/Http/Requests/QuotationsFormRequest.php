@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class OrdersFormRequest extends FormRequest
+class QuotationsFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class OrdersFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,16 +24,7 @@ class OrdersFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'CEP_Origem'=>'min:8|max:8',
-            'CEP_Destino'=>'min:8|max:8'
-        ];
-    }
-    public function messages()
-    {
-        return[
-            
-            'min' => 'O cep deve possuir exatamente 8 dígitos',
-            'max' => 'O cep deve possuir exatamente 8 dígitos',
+            //
         ];
     }
 }
