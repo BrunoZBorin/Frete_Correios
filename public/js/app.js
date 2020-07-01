@@ -51139,7 +51139,6 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 Vue.component('jumbo', __webpack_require__(/*! ./components/Jumbo.vue */ "./resources/js/components/Jumbo.vue")["default"]);
 Vue.component('navbar', __webpack_require__(/*! ./components/Navbar.vue */ "./resources/js/components/Navbar.vue")["default"]);
 Vue.component('cards', __webpack_require__(/*! ./components/Cards.vue */ "./resources/js/components/Cards.vue")["default"]);
-Vue.component('list', __webpack_require__(/*! ./components/List.vue */ "./resources/js/components/List.vue")["default"]);
 Vue.component('addproduct', __webpack_require__(/*! ./components/Add/AddProduct.vue */ "./resources/js/components/Add/AddProduct.vue")["default"]);
 Vue.component('addorder', __webpack_require__(/*! ./components/Add/AddOrder.vue */ "./resources/js/components/Add/AddOrder.vue")["default"]);
 Vue.component('addquotation', __webpack_require__(/*! ./components/Add/AddQuotation.vue */ "./resources/js/components/Add/AddQuotation.vue")["default"]);
@@ -51542,17 +51541,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Jumbo_vue_vue_type_template_id_37c76d18___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
-
-/***/ }),
-
-/***/ "./resources/js/components/List.vue":
-/*!******************************************!*\
-  !*** ./resources/js/components/List.vue ***!
-  \******************************************/
-/*! exports provided: default */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/vue-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/opt/lampp/htdocs/AppFreteCorreios/FreteCorreios/resources/js/components/List.vue'");
 
 /***/ }),
 
